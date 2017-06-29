@@ -1,5 +1,5 @@
 //
-//  MostViewedArticlesApi.swift
+//  NyTimesMostPopularArticlesApi.swift
 //  NyTimesMostPopularArticles
 //
 //  Created by Balázs Varga on 2017. 06. 29..
@@ -9,11 +9,11 @@
 import Foundation
 import Moya
 
-enum NyTimesMostPopularApi {
+enum NyTimesMostPopularArticlesApi {
     case mostViewed(section: Section, timePeriod: TimePeriod)
 }
 
-extension NyTimesMostPopularApi : TargetType {
+extension NyTimesMostPopularArticlesApi : TargetType {
     
     var baseURL: URL { return URL(string: "http://api.nytimes.com/svc/mostpopular/v2")! }
     

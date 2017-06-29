@@ -1,26 +1,44 @@
 PODS:
-  - Alamofire (4.4.0)
+  - Alamofire (4.5.0)
   - Gloss (1.2.4)
-  - Moya/Core (8.0.3):
+  - Moya (8.0.5):
+    - Moya/Core (= 8.0.5)
+  - Moya-Gloss/Core (2.0.1):
+    - Gloss (~> 1.2)
+    - Moya (~> 8.0)
+  - Moya-Gloss/RxSwift (2.0.1):
+    - Moya-Gloss/Core
+    - Moya/RxSwift
+    - RxSwift (~> 3.4)
+  - Moya/Core (8.0.5):
     - Alamofire (~> 4.1)
     - Result (~> 3.0)
-  - Moya/RxSwift (8.0.3):
+  - Moya/RxSwift (8.0.5):
     - Moya/Core
     - RxSwift (~> 3.0)
-  - Result (3.2.1)
-  - RxSwift (3.4.0)
+  - Result (3.2.3)
+  - RxSwift (3.5.0)
+  - Swinject (2.1.0)
+  - SwinjectStoryboard (1.1.1):
+    - Swinject (~> 2.0)
 
 DEPENDENCIES:
   - Gloss (~> 1.2)
+  - Moya-Gloss/RxSwift (~> 2.0.0)
   - Moya/RxSwift (~> 8.0.0)
+  - Swinject (~> 2.1.0)
+  - SwinjectStoryboard (~> 1.1.0)
 
 SPEC CHECKSUMS:
-  Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
+  Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
   Gloss: 4e036074610fdb993abcb958ebcd7332588e2333
-  Moya: d3721622e3cc0cc2f038d69a258686f0b66e7252
-  Result: 2453a22e5c5b11c0c3a478736e82cd02f763b781
-  RxSwift: 3789a1af753002a14edecdb698a2424624296a9c
+  Moya: c37eec09a098ba9991b5a963b291fc5704bdb9ef
+  Moya-Gloss: 59a96de0673f555e080afb381f8c4f932ae9fb1a
+  Result: 128640a6347e8d2ae48b142556739a2d13f90ce6
+  RxSwift: 18ee9d78b45edb3b0b7e79916b47a116e6dbc842
+  Swinject: 85e468ac75c5c2d234076f98c591d57d56bc64bc
+  SwinjectStoryboard: 4c71c25f312322844d39ee06f0f523db7b9b10a3
 
-PODFILE CHECKSUM: 6e2ce4f277b8c411963a0d2370e741f04a28add9
+PODFILE CHECKSUM: f8762a8750af62fb1a0ffa6da5192aa4fa0da61e
 
 COCOAPODS: 1.2.1

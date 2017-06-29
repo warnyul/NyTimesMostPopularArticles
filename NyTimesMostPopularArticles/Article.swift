@@ -1,5 +1,5 @@
 //
-//  ArticleWithCountType.swift
+//  Article.swift
 //  NyTimesMostPopularArticles
 //
 //  Created by Balázs Varga on 2017. 06. 29..
