@@ -17,12 +17,18 @@ class ArticlesViewController: UIViewController {
 
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var articlesRepository: NyTimesMostPopularRepository?
     var disposeBag: DisposeBag! = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.articlesRepository?
+            .activityIndicator.asDriver().drive(onNext: { visible in
+                self.activityIndicator.isHidden = !visible
+            }).disposed(by: disposeBag)
         
         setupTableViewItemSelect()
         setupHideKeyboardOnTableViewScroll()
@@ -33,6 +39,10 @@ class ArticlesViewController: UIViewController {
         tableView.rx.modelSelected(ArticleViewModel.self).asDriver().drive(onNext: { (article) in
             
             self.showArticlesDetails(article: article)
+            
+            if (self.searchBar.isFirstResponder) {
+                self.searchBar.endEditing(true)
+            }
             
         }).disposed(by: disposeBag)
     }
