@@ -1,3 +1,4 @@
 language: objective-c
+osx_image: 8.3
 xcode_workspace: NyTimesMostPopularArticles.xcworkspace
 xcode_scheme: NyTimesMostPopularArticles
