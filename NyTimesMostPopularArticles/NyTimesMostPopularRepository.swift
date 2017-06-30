@@ -10,13 +10,15 @@ import Foundation
 import Moya
 import Moya_Gloss
 import RxSwift
+import RxCocoa
 import SwiftyBeaver
 
 class NyTimesMostPopularRepository {
     
-    let api: RxMoyaProvider<NyTimesMostPopularArticlesApi>!
-    let log: SwiftyBeaver.Type! = SwiftyBeaver.self
-    var cache: Response? = nil
+    private let api: RxMoyaProvider<NyTimesMostPopularArticlesApi>!
+    private let log: SwiftyBeaver.Type! = SwiftyBeaver.self
+    private var cache: Response? = nil
+    var activityIndicator = ActivityIndicator()
     
     init(api: RxMoyaProvider<NyTimesMostPopularArticlesApi>!) {
         self.api = api
@@ -38,16 +40,7 @@ class NyTimesMostPopularRepository {
         
         return request.flatMap {
             return try self.resolveArticles(response: $0)
-        }
-    }
-    
-    func mostViewed(at index: Int)  -> Observable<Article?> {
-        return self.mostViewed().map({
-            if index < $0.count {
-                return $0[index]
-            }
-            return nil
-        })
+        }.trackActivity(activityIndicator)
     }
     
     func mostViewed(filter text: String) -> Observable<[Article]> {

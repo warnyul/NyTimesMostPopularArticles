@@ -27,7 +27,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="121" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3zq-JO-Fru">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="109" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3zq-JO-Fru">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Search" id="mSS-EY-hpO">
@@ -36,46 +36,49 @@
                                     <textInputTraits key="textInputTraits"/>
                                 </searchBar>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ArticleCell" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ArticleCell" rowHeight="121" id="cm8-yd-1FM" customClass="ArticleTableViewCell" customModule="NyTimesMostPopularArticles" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="72" width="375" height="121"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ArticleCell" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ArticleCell" rowHeight="109" id="cm8-yd-1FM" customClass="ArticleTableViewCell" customModule="NyTimesMostPopularArticles" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="72" width="375" height="109"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cm8-yd-1FM" id="l8w-by-hRq">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="121"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="109"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Supporters of the Democratic candidate Jon Ossoff after his dasdasdadadasdaa" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4FQ-Ny-j5c">
-                                                    <rect key="frame" x="77.5" y="23" width="251.5" height="33.5"/>
+                                                    <rect key="frame" x="65.5" y="18" width="263.5" height="33.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="33.5" id="oOl-NB-68g"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By DAVID LEONHARDT and STUART A. THOMPSON" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kzI-Up-NlG">
-                                                    <rect key="frame" x="78" y="71.5" width="251" height="17"/>
+                                                    <rect key="frame" x="66" y="56.5" width="263" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
                                                     <color key="textColor" red="0.44313725490196076" green="0.44313725490196076" blue="0.44313725490196076" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="A. THOMPSON" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Avy-aD-VTt">
-                                                    <rect key="frame" x="78" y="90" width="149" height="17"/>
+                                                    <rect key="frame" x="66" y="75" width="161" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
                                                     <color key="textColor" red="0.44313725490196076" green="0.44313725490196076" blue="0.44313725490196076" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2017-06-27" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9e6-Fm-EqE">
-                                                    <rect key="frame" x="252" y="89.5" width="77" height="17"/>
+                                                    <rect key="frame" x="252" y="74.5" width="77" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
                                                     <color key="textColor" red="0.44313725490196076" green="0.44313725490196076" blue="0.44313725490196076" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MsA-YP-QvC">
-                                                    <rect key="frame" x="23" y="38" width="45" height="45"/>
+                                                    <rect key="frame" x="23" y="38" width="33" height="33"/>
                                                     <color key="backgroundColor" red="0.60392156862745094" green="0.60392156862745094" blue="0.60392156862745094" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="MsA-YP-QvC" secondAttribute="height" multiplier="1:1" id="rtQ-QF-B3I"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B6j-ee-qbk">
-                                                    <rect key="frame" x="232" y="88.5" width="15" height="20"/>
+                                                    <rect key="frame" x="232" y="73.5" width="15" height="20"/>
                                                     <fontDescription key="fontDescription" name="Ionicons" family="Ionicons" pointSize="20"/>
                                                     <color key="textColor" red="0.44313725490196076" green="0.44313725490196076" blue="0.44313725490196076" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -95,10 +98,10 @@
                                                 <constraint firstItem="B6j-ee-qbk" firstAttribute="top" secondItem="kzI-Up-NlG" secondAttribute="bottom" id="mp4-5Q-cpo"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="9e6-Fm-EqE" secondAttribute="trailing" constant="5" id="rg2-Be-Ipb"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="4FQ-Ny-j5c" secondAttribute="trailing" constant="5" id="uke-96-iON"/>
-                                                <constraint firstItem="4FQ-Ny-j5c" firstAttribute="top" secondItem="l8w-by-hRq" secondAttribute="topMargin" constant="15" id="uon-N3-FQb"/>
+                                                <constraint firstItem="4FQ-Ny-j5c" firstAttribute="top" secondItem="l8w-by-hRq" secondAttribute="topMargin" constant="10" id="uon-N3-FQb"/>
                                                 <constraint firstItem="9e6-Fm-EqE" firstAttribute="top" secondItem="kzI-Up-NlG" secondAttribute="bottom" constant="1" id="vCd-Qb-LFQ"/>
                                                 <constraint firstItem="MsA-YP-QvC" firstAttribute="leading" secondItem="l8w-by-hRq" secondAttribute="leadingMargin" constant="15" id="wNb-XQ-qzQ"/>
-                                                <constraint firstItem="kzI-Up-NlG" firstAttribute="top" secondItem="4FQ-Ny-j5c" secondAttribute="bottom" constant="15" id="wVb-I0-kdu" userLabel="Byline.top = Title.bottom + 5"/>
+                                                <constraint firstItem="kzI-Up-NlG" firstAttribute="top" secondItem="4FQ-Ny-j5c" secondAttribute="bottom" constant="5" id="wVb-I0-kdu" userLabel="Byline.top = Title.bottom + 5"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -134,13 +137,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gU1-Rz-fh7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="180" y="181"/>
+            <point key="canvasLocation" x="180" y="180.35982008995504"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="3pJ-Uj-of9">
             <objects>
                 <navigationController id="zw6-S1-Act" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="ZRo-94-drs">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ZRo-94-drs">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
