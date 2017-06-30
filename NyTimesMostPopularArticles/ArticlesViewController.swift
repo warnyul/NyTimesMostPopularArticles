@@ -7,12 +7,15 @@
 //
 
 import UIKit
+import RxCocoa
 import RxSwift
+import Moya
 import Moya_Gloss
 import RxDataSources
 
 class ArticlesViewController: UIViewController {
 
+    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     
     var articlesRepository: NyTimesMostPopularRepository?
@@ -21,18 +24,51 @@ class ArticlesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        articlesRepository?.mostViewed()
-            .flatMap({ (response) -> Observable<[ArticleViewModel]> in
-                let articlesResponse = try response.mapObject(ArticlesResponse.self)
+        setupTableViewItemSelect()
+        setupHideKeyboardOnTableViewScroll()
+        setupSearchBar()
+    }
+    
+    private func setupTableViewItemSelect() {
+        tableView.rx.modelSelected(ArticleViewModel.self).asDriver().drive(onNext: { (article) in
             
-                guard let articles = articlesResponse.results else {
-                    return Observable.just([])
+            self.showArticlesDetails(article: article)
+            
+        }).disposed(by: disposeBag)
+    }
+    
+    private func showArticlesDetails(article: ArticleViewModel) {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "ArticleDetails") as! ArticleDetailsViewController
+        
+        vc.article = article
+        self.navigationController?.pushViewController(vc, animated: true)
+
+    }
+    
+    private func setupHideKeyboardOnTableViewScroll() {
+        tableView.rx.contentOffset
+            .asDriver()
+            .drive(onNext: { _ in
+                if self.searchBar.isFirstResponder {
+                    _ = self.searchBar.resignFirstResponder()
                 }
-            
-                return Observable.just(articles)
-            }).bind(to: self.tableView.rx.items(cellIdentifier: "ArticleCell")) {
+            })
+            .disposed(by: disposeBag)
+    }
+    
+    private func setupSearchBar() {
+        searchBar.rx.text.orEmpty
+            .asDriver()
+            .throttle(0.3)
+            .distinctUntilChanged()
+            .flatMapLatest { text in
+                (self.articlesRepository?.mostViewed(filter: text)
+                    .startWith([])
+                    .asDriver(onErrorJustReturn: []))!
+                
+            }.drive (self.tableView.rx.items(cellIdentifier: "ArticleCell")) {
                 (index, article: ArticleViewModel, cell: ArticleTableViewCell) in
-                    cell.bind(article: article)
+                cell.bind(article: article)
             }.disposed(by: disposeBag)
     }
 }

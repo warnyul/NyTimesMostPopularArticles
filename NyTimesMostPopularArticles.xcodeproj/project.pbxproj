@@ -28,6 +28,7 @@
 		4B6FAB491F056D150037F34F /* NyTimesMostPopularRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6FAB481F056D150037F34F /* NyTimesMostPopularRepository.swift */; };
 		4B6FAB501F0589D70037F34F /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6FAB4F1F0589D70037F34F /* ArticleTableViewCell.swift */; };
 		4B6FAB521F058B2B0037F34F /* ArticleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6FAB511F058B2B0037F34F /* ArticleViewModel.swift */; };
+		4B6FAB551F0616A40037F34F /* ArticleDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6FAB541F0616A40037F34F /* ArticleDetailsViewController.swift */; };
 		5FC7F9AC46373CA76F3342D8 /* Pods_NyTimesMostPopularArticles_Tests_NyTimesMostPopularArticlesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E46DF80B4C40F43C3459FDA8 /* Pods_NyTimesMostPopularArticles_Tests_NyTimesMostPopularArticlesUITests.framework */; };
 		72BD47F290E2B1119C22641E /* Pods_NyTimesMostPopularArticles_NyTimesMostPopularArticlesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47CE6B2F592C838D90B6FE30 /* Pods_NyTimesMostPopularArticles_NyTimesMostPopularArticlesUITests.framework */; };
 		855822D7E4321E5AAB604AE0 /* Pods_NyTimesMostPopularArticles_Tests_NyTimesMostPopularArticlesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ADD887183859B410C7BFF06 /* Pods_NyTimesMostPopularArticles_Tests_NyTimesMostPopularArticlesTests.framework */; };
@@ -86,6 +87,7 @@
 		4B6FAB481F056D150037F34F /* NyTimesMostPopularRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NyTimesMostPopularRepository.swift; sourceTree = "<group>"; };
 		4B6FAB4F1F0589D70037F34F /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
 		4B6FAB511F058B2B0037F34F /* ArticleViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleViewModel.swift; sourceTree = "<group>"; };
+		4B6FAB541F0616A40037F34F /* ArticleDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleDetailsViewController.swift; sourceTree = "<group>"; };
 		4D0A2B65A49795BF7BA17A14 /* Pods-NyTimesMostPopularArticles.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NyTimesMostPopularArticles.release.xcconfig"; path = "Pods/Target Support Files/Pods-NyTimesMostPopularArticles/Pods-NyTimesMostPopularArticles.release.xcconfig"; sourceTree = "<group>"; };
 		6206C125C9CD758FF08FFA5E /* Pods_NyTimesMostPopularArticlesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NyTimesMostPopularArticlesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		63D71094AECCB2C8212BA482 /* Pods-NyTimesMostPopularArticlesUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NyTimesMostPopularArticlesUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NyTimesMostPopularArticlesUITests/Pods-NyTimesMostPopularArticlesUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -253,6 +255,7 @@
 			isa = PBXGroup;
 			children = (
 				4B6FAB4E1F0589BA0037F34F /* Articles */,
+				4B6FAB531F0612040037F34F /* ArticleDetails */,
 				4B25A72E1F05149C007D5E30 /* Main.storyboard */,
 			);
 			name = Screens;
@@ -266,6 +269,14 @@
 				4B6FAB511F058B2B0037F34F /* ArticleViewModel.swift */,
 			);
 			name = Articles;
+			sourceTree = "<group>";
+		};
+		4B6FAB531F0612040037F34F /* ArticleDetails */ = {
+			isa = PBXGroup;
+			children = (
+				4B6FAB541F0616A40037F34F /* ArticleDetailsViewController.swift */,
+			);
+			name = ArticleDetails;
 			sourceTree = "<group>";
 		};
 		E7708E0107FB36E2C9EE453F /* Pods */ = {
@@ -581,6 +592,7 @@
 				4B25A7641F05355A007D5E30 /* Section.swift in Sources */,
 				4B25A72B1F05149C007D5E30 /* AppDelegate.swift in Sources */,
 				4B25A7661F05358F007D5E30 /* TimePeriod.swift in Sources */,
+				4B6FAB551F0616A40037F34F /* ArticleDetailsViewController.swift in Sources */,
 				4B25A75F1F05344D007D5E30 /* Media.swift in Sources */,
 				4B25A76A1F054D25007D5E30 /* NyTimesMostPopularArticlesApi.swift in Sources */,
 				4B25A7681F053D85007D5E30 /* ArticlesResponse.swift in Sources */,

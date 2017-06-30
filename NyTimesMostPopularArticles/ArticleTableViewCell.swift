@@ -34,7 +34,7 @@ class ArticleTableViewCell : UITableViewCell {
         byline.text = article.byline
         date.text = article.publishedDate
         
-        if let imageUrl = article.imageUrl {
+        if let imageUrl = article.imageURL {
             self.articleImage.af_setImage(withURL: imageUrl)
         }
     }

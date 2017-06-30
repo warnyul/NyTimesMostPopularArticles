@@ -14,12 +14,12 @@ target 'NyTimesMostPopularArticles' do
 
   target 'NyTimesMostPopularArticlesTests' do
     inherit! :search_paths
-    # Pods for testing
+    
   end
 
   target 'NyTimesMostPopularArticlesUITests' do
     inherit! :search_paths
-    # Pods for testing
+
   end
 
 end

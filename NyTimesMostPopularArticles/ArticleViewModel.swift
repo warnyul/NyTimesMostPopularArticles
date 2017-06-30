@@ -12,11 +12,12 @@ protocol ArticleViewModel {
     var title: String? { get }
     var byline: String? { get }
     var publishedDate: String? { get }
-    var imageUrl: URL? { get }
+    var imageURL: URL? { get }
+    var url: String? { get }
 }
 
 extension Article : ArticleViewModel {
-    var imageUrl: URL? {
+    var imageURL: URL? {
         return media?.filter({$0.type == "image" && $0.mediaMetadata?.url != nil })
             .flatMap({ URL(string: ($0.mediaMetadata?.url)!)})
             .first
