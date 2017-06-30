@@ -14,7 +14,7 @@ struct Media : Decodable {
     var subtype: String?
     var caption: String?
     var copyright: String?
-    var mediaMetadata: MediaMetadata?
+    var mediaMetadata: Array<MediaMetadata>?
     
     init?(json: JSON) {
         self.type = "type" <~~ json

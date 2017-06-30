@@ -18,8 +18,15 @@ protocol ArticleViewModel {
 
 extension Article : ArticleViewModel {
     var imageURL: URL? {
-        return media?.filter({$0.type == "image" && $0.mediaMetadata?.url != nil })
-            .flatMap({ URL(string: ($0.mediaMetadata?.url)!)})
+        
+        let metadata = self.media?
+            .first?
+            .mediaMetadata?
             .first
+            
+        if let urlString = metadata?.url {
+            return URL(string: urlString)
+        }
+        return nil
     }
 }
