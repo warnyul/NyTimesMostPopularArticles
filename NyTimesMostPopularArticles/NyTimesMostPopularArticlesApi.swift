@@ -20,7 +20,6 @@ extension NyTimesMostPopularArticlesApi : TargetType {
     var path: String {
         switch self {
         case let .mostViewed(section, timePeriod):
-            // TODO api key
             return "/mostviewed/\(section.rawValue)/\(timePeriod.rawValue).json"
         }
     }
@@ -29,7 +28,10 @@ extension NyTimesMostPopularArticlesApi : TargetType {
         return .get
     }
     
-    var parameters: [String: Any]? { return nil }
+    var parameters: [String: Any]? {
+        // TODO From build parameter
+        return ["api-key": "401cb65896274cd0acca79942e13b91b"]
+    }
     
     var parameterEncoding: ParameterEncoding { return URLEncoding.default }
     
