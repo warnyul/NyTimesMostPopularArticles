@@ -5,36 +5,86 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--NY Times Most Popular-->
         <scene sceneID="wjd-ET-ODT">
             <objects>
-                <tableViewController id="fDn-We-iRT" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="3zq-JO-Fru">
+                <tableViewController id="fDn-We-iRT" customClass="ArticlesViewController" customModule="NyTimesMostPopularArticles" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="150" sectionHeaderHeight="28" sectionFooterHeight="28" id="3zq-JO-Fru">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="cm8-yd-1FM">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ArticleCell" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ArticleCell" rowHeight="150" id="cm8-yd-1FM" customClass="ArticleTableViewCell" customModule="NyTimesMostPopularArticles" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="150"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cm8-yd-1FM" id="l8w-by-hRq">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="342" height="149.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By DAVID LEONHARDT and STUART A. THOMPSON" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kzI-Up-NlG">
+                                            <rect key="frame" x="91.5" y="71.5" width="237.5" height="33.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2017-06-27" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9e6-Fm-EqE">
+                                            <rect key="frame" x="91.5" y="109.5" width="237.5" height="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MsA-YP-QvC">
+                                            <rect key="frame" x="28" y="48" width="53.5" height="53.5"/>
+                                            <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="MsA-YP-QvC" secondAttribute="height" multiplier="1:1" id="rtQ-QF-B3I"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Supporters of the Democratic candidate Jon Ossoff after his dasdasdadadasdaa" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4FQ-Ny-j5c">
+                                            <rect key="frame" x="91.5" y="23" width="237.5" height="33.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="9e6-Fm-EqE" firstAttribute="leading" secondItem="MsA-YP-QvC" secondAttribute="trailing" constant="10" id="9rx-HF-MgX"/>
+                                        <constraint firstItem="4FQ-Ny-j5c" firstAttribute="leading" secondItem="MsA-YP-QvC" secondAttribute="trailing" constant="10" id="FDR-kn-90N"/>
+                                        <constraint firstItem="kzI-Up-NlG" firstAttribute="leading" secondItem="MsA-YP-QvC" secondAttribute="trailing" constant="10" id="Mj4-VT-1qV"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="9e6-Fm-EqE" secondAttribute="bottom" constant="15" id="QVb-gA-p8D"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="kzI-Up-NlG" secondAttribute="trailing" constant="5" id="QfW-gE-QeH"/>
+                                        <constraint firstItem="MsA-YP-QvC" firstAttribute="top" secondItem="l8w-by-hRq" secondAttribute="topMargin" constant="40" id="T3e-S9-dIX"/>
+                                        <constraint firstItem="MsA-YP-QvC" firstAttribute="centerY" secondItem="l8w-by-hRq" secondAttribute="centerY" id="dCC-je-YSe"/>
+                                        <constraint firstItem="9e6-Fm-EqE" firstAttribute="top" secondItem="kzI-Up-NlG" secondAttribute="bottom" constant="5" id="gFQ-fD-DWJ"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="9e6-Fm-EqE" secondAttribute="trailing" constant="5" id="iXh-AV-0Ac"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="4FQ-Ny-j5c" secondAttribute="trailing" constant="5" id="uke-96-iON"/>
+                                        <constraint firstItem="4FQ-Ny-j5c" firstAttribute="top" secondItem="l8w-by-hRq" secondAttribute="topMargin" constant="15" id="uon-N3-FQb"/>
+                                        <constraint firstItem="MsA-YP-QvC" firstAttribute="leading" secondItem="l8w-by-hRq" secondAttribute="leadingMargin" constant="20" id="wNb-XQ-qzQ"/>
+                                        <constraint firstItem="kzI-Up-NlG" firstAttribute="top" secondItem="4FQ-Ny-j5c" secondAttribute="bottom" constant="15" id="wVb-I0-kdu" userLabel="Byline.top = Title.bottom + 5"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="articleImage" destination="MsA-YP-QvC" id="yKX-ip-BYz"/>
+                                    <outlet property="byline" destination="kzI-Up-NlG" id="PWb-n5-NzO"/>
+                                    <outlet property="date" destination="9e6-Fm-EqE" id="WIJ-P1-CZG"/>
+                                    <outlet property="title" destination="4FQ-Ny-j5c" id="UE2-k1-4Rq"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="fDn-We-iRT" id="4D5-s9-Bmj"/>
-                            <outlet property="delegate" destination="fDn-We-iRT" id="8Oy-JL-JmW"/>
-                        </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="ZLt-MY-c8D"/>
+                    <navigationItem key="navigationItem" title="NY Times Most Popular" id="ZLt-MY-c8D"/>
+                    <connections>
+                        <outlet property="tableView" destination="3zq-JO-Fru" id="njZ-sg-nxr"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Fy-OK-ojL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="32.799999999999997" y="134.48275862068968"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="3pJ-Uj-of9">

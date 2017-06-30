@@ -7,21 +7,33 @@
 //
 
 import UIKit
+import RxSwift
+import Moya_Gloss
+import RxDataSources
 
-class ArticlesViewController: UITableViewController {
+class ArticlesViewController: UIViewController {
 
+    @IBOutlet weak var tableView: UITableView!
+    
     var articlesRepository: NyTimesMostPopularRepository?
+    var disposeBag: DisposeBag! = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        articlesRepository?.mostViewed()
+            .flatMap({ (response) -> Observable<[ArticleViewModel]> in
+                let articlesResponse = try response.mapObject(ArticlesResponse.self)
+            
+                guard let articles = articlesResponse.results else {
+                    return Observable.just([])
+                }
+            
+                return Observable.just(articles)
+            }).bind(to: self.tableView.rx.items(cellIdentifier: "ArticleCell")) {
+                (index, article: ArticleViewModel, cell: ArticleTableViewCell) in
+                    cell.bind(article: article)
+            }.disposed(by: disposeBag)
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
 }
 

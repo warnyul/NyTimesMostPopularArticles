@@ -10,6 +10,7 @@ import Foundation
 import Swinject
 import SwinjectStoryboard
 import Moya
+import SwiftyBeaver
 
 extension SwinjectStoryboard {
     class func setup() {
@@ -21,10 +22,11 @@ extension SwinjectStoryboard {
         defaultContainer.register(NyTimesMostPopularRepository.self) { (r) in
             let provider = r.resolve(RxMoyaProvider<NyTimesMostPopularArticlesApi>.self)
             return NyTimesMostPopularRepository(api: provider)
-        }
+        }.inObjectScope(.container)
         
-        defaultContainer.register(RxMoyaProvider<NyTimesMostPopularArticlesApi>.self) {
-            _ in RxMoyaProvider<NyTimesMostPopularArticlesApi>()
+        defaultContainer.register(RxMoyaProvider<NyTimesMostPopularArticlesApi>.self) { (r) in
+            let logger = NetworkLoggerPlugin(verbose: true)
+            return RxMoyaProvider<NyTimesMostPopularArticlesApi>(plugins: [logger])
         }.inObjectScope(.container)
     }
 }

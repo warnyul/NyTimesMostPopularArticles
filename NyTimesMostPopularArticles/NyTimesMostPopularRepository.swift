@@ -10,17 +10,19 @@ import Foundation
 import Moya
 import Moya_Gloss
 import RxSwift
+import SwiftyBeaver
 
 class NyTimesMostPopularRepository {
     
     let api: RxMoyaProvider<NyTimesMostPopularArticlesApi>!
+    let log: SwiftyBeaver.Type! = SwiftyBeaver.self
     
     init(api: RxMoyaProvider<NyTimesMostPopularArticlesApi>!) {
         self.api = api
     }
     
-    func mostViewed() -> Observable<ArticlesResponse> {
-        return api.request(.mostViewed(section: Section.allSections, timePeriod: TimePeriod.sevenDays)).mapObject(type: ArticlesResponse.self)
+    func mostViewed() -> Observable<Response> {
+        return api.request(.mostViewed(section: Section.allSections, timePeriod: TimePeriod.sevenDays))
     }
 
 }

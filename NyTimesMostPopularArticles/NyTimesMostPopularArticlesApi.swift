@@ -15,13 +15,13 @@ enum NyTimesMostPopularArticlesApi {
 
 extension NyTimesMostPopularArticlesApi : TargetType {
     
-    var baseURL: URL { return URL(string: "http://api.nytimes.com/svc/mostpopular/v2")! }
+    var baseURL: URL { return URL(string: "https://api.nytimes.com/svc/mostpopular/v2")! }
     
     var path: String {
         switch self {
         case let .mostViewed(section, timePeriod):
             // TODO api key
-            return "/mostviewed/\(section)/\(timePeriod).json?api-key={apikey}"
+            return "/mostviewed/\(section.rawValue)/\(timePeriod.rawValue).json"
         }
     }
     
@@ -31,7 +31,7 @@ extension NyTimesMostPopularArticlesApi : TargetType {
     
     var parameters: [String: Any]? { return nil }
     
-    var parameterEncoding: ParameterEncoding { return JSONEncoding.default }
+    var parameterEncoding: ParameterEncoding { return URLEncoding.default }
     
     var sampleData: Data {
         switch self {

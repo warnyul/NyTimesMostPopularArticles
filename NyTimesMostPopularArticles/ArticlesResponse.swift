@@ -12,7 +12,7 @@ import Gloss
 struct ArticlesResponse : Decodable {
     var status: String?
     var copyright: String?
-    var numResults: String?
+    var numResults: Int?
     var results: Array<Article>?
     
     init?(json: JSON) {
